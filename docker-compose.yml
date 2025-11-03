@@ -1,7 +1,7 @@
 version: '3.8'
 
 services:
-  client:
+  cliente:
     build:
       context: ./client
       dockerfile: Dockerfile
@@ -12,7 +12,7 @@ services:
     environment:
       - NODE_ENV=development
 
-  server:
+  servidor:
     build:
       context: ./server
       dockerfile: Dockerfile
@@ -22,12 +22,12 @@ services:
       - ./server:/app
     environment:
       - NODE_ENV=development
-      - DATABASE_URL=your_database_url_here
+      - DATABASE_URL=postgres://your_username:your_password@bd:5432/your_database_name
     depends_on:
-      - db
+      - bd
 
-  db:
-    image: postgres:latest
+  bd:
+    image: postgres:16-alpine
     ports:
       - '5432:5432'
     environment:

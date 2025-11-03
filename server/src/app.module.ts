@@ -1,17 +1,15 @@
 import { Module } from '@nestjs/common';
-import { AuthModule } from './modules/auth/auth.module';
-import { UsersModule } from './modules/users/users.module';
-import { ProjectsModule } from './modules/projects/projects.module';
-import { ContactModule } from './modules/contact/contact.module';
-import { ConfigModule } from './config/config.module';
+import { AutenticacionModule } from './modules/autenticacion/autenticacion.module';
+import { UsuariosModule } from './modules/usuarios/usuarios.module';
+import { ProyectosModule } from './modules/proyectos/proyectos.module';
+import { ContactoModule } from './modules/contacto/contacto.module';
 
 @Module({
   imports: [
-    ConfigModule,
-    AuthModule,
-    UsersModule,
-    ProjectsModule,
-    ContactModule,
+    AutenticacionModule,
+    UsuariosModule,
+    ProyectosModule,
+    ContactoModule,
   ],
 })
 export class AppModule {}

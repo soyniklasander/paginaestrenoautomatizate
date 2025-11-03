@@ -8,6 +8,11 @@
       </div>
     </section>
 
+    <!-- Estado del servidor -->
+    <div class="contenedor">
+      <EstadoServidor modulo="usuarios" />
+    </div>
+
     <!-- Sección Categorías de Servicios -->
     <section class="seccion servicios-lista">
       <div class="contenedor">
@@ -126,9 +131,11 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import EstadoServidor from '@/componentes/comun/EstadoServidor.vue'
 
 export default defineComponent({
-  name: 'Servicios'
+  name: 'Servicios',
+  components: { EstadoServidor }
 })
 </script>
 
@@ -144,7 +151,6 @@ export default defineComponent({
   max-width: 800px;
   margin: 0 auto;
 }
-
 .hero h1 {
   font-size: 3.5rem;
   color: white;
